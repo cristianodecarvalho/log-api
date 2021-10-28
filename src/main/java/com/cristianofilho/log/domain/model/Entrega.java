@@ -17,6 +17,8 @@ import javax.validation.groups.ConvertGroup;
 import javax.validation.groups.Default;
 
 import com.cristianofilho.log.domain.ValidationGroups;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -47,14 +49,14 @@ public class Entrega {
 	@NotNull
 	private BigDecimal taxa;
 	
-	//@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.READ_ONLY)
 	@Enumerated(EnumType.STRING)
 	private StatusEntrega status;
 	
-	//@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.READ_ONLY)
 	private OffsetDateTime dataPedido;
 	
-	//@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.READ_ONLY)
 	private OffsetDateTime dataFinalizacao;
 	
 }
